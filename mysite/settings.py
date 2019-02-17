@@ -119,4 +119,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
-CORS_ORIGIN_WHITELIST = ['localhost:8001']
+CORS_ORIGIN_WHITELIST = ['localhost:9001']
+
+try:
+    from local_settings import *
+    print("Imported local settings")
+except ImportError:
+    print("Local settings are missing")
